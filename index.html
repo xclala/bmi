@@ -18,20 +18,40 @@
     <a href="..">🔙<br></a>
     <h1>BMI计算器</h1>
     <form align="center">
+        <input id="kg" onkeyup="bmi()" placeholder="体重（千克）" type="number">
+        <label>体重（千克）</label>
+        <p></p>
+        <input id="m" onkeyup="bmi()" placeholder="身高（米）" type="number">
+        <label>身高（米）</label>
+        <p></p>
+        <strong id="BMI"></strong>
+        <p></p>
+        <strong id="mx"></strong>
+        <p></p>
+        <button type="reset">清空</button>
         <script>
             function bmi() {
                 let heavy = Math.abs(document.getElementById("kg").value)
                 let tall = Math.abs(document.getElementById("m").value)
                 let BMI = heavy / tall ** 2
                 if (document.getElementById("m").value != '') {
-                    document.getElementById("BMI").value = Math.round(BMI * 100) / 100 //四舍五入到百分位
+                    document.getElementById("BMI").innerHTML = "BMI:" + Math.round(BMI * 100) / 100 //四舍五入到百分位
+                }
+                if (BMI < 18.5) {
+                    document.getElementById("mx").innerHTML = "低于正常体重"
+                    document.getElementById("mx").style.color = "red"
+                } else if (BMI < 25) {
+                    document.getElementById("mx").innerHTML = "正常体重"
+                    document.getElementById("mx").style.color = "green"
+                } else if (BMI < 30) {
+                    document.getElementById("mx").innerHTML = "超重"
+                    document.getElementById("mx").style.color = "red"
+                } else {
+                    document.getElementById("mx").innerHTML = "肥胖"
+                    document.getElementById("mx").style.color = "red"
                 }
             }
         </script>
-        <input id="kg" onkeyup="bmi()" placeholder="体重（千克）" type="number">
-        <input id="m" onkeyup="bmi()" placeholder="身高（米）" type="number">
-        <input id="BMI" onkeyup="bmi()" placeholder="BMI" type="number">
-        <button type="reset">清空</button>
     </form>
     <style>
         h1 {
