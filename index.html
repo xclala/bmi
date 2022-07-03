@@ -54,8 +54,46 @@
         </script>
     </form>
     <style>
+        html {
+            -moz-osx-font-smoothing: grayscale;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
         h1 {
             text-align: center;
+        }
+
+        a {
+            text-decoration-line: none;
+        }
+
+        a:hover {
+            font-weight: bolder;
+        }
+
+        @media(prefers-color-scheme:dark) {
+            body {
+                background-color: #111114;
+            }
+
+            h1,
+            label,
+            #BMI {
+                color: white;
+            }
+        }
+
+        @media(prefers-color-scheme:light) {
+            body {
+                background-color: whitesmoke;
+            }
+
+            h1,
+            label,
+            #BMI {
+                color: black;
+            }
         }
     </style>
 </body>
