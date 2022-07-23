@@ -4,7 +4,7 @@
     "start_url": "https://xclala.github.io/bmi",
     "display": "standalone",
     "description": "BMI计算器",
-    "lang": "Chinese",
+    "lang": "zh-cn",
     "dir": "auto",
     "theme_color": "#000000",
     "background_color": "#000000",
