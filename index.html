@@ -61,6 +61,7 @@
             }
         </script>
     </form>
+    <a href="qrcode.png">二维码</a>
     <style>
         html {
             -moz-osx-font-smoothing: grayscale;
@@ -90,6 +91,10 @@
             #BMI {
                 color: white;
             }
+
+            a {
+                color: orangered;
+            }
         }
 
         @media(prefers-color-scheme:light) {
@@ -102,11 +107,16 @@
             #BMI {
                 color: black;
             }
+
+            a {
+                color: blue;
+            }
         }
     </style>
     <script>
         const BACKGROUNDCOLOR = ['#111114', 'whitesmoke']
         const TEXTCOLOR = ['white', 'black']
+        const LINKCOLOR = ['orangered', 'blue']
         let c = 0
         document.getElementsByTagName("h1")[0].onclick = function () {
             document.body.style.backgroundColor = BACKGROUNDCOLOR[c % 2]
@@ -115,6 +125,7 @@
             document.getElementsByTagName("label")[1].style.color = TEXTCOLOR[c % 2]
             document.getElementById("mx").style.color = TEXTCOLOR[c % 2]
             document.getElementById("BMI").style.color = TEXTCOLOR[c % 2]
+            document.getElementsByTagName("a")[2].style.color = LINKCOLOR[c % 2]
             c++
         }
     </script>
